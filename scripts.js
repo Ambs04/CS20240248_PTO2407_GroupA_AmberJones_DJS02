@@ -15,8 +15,12 @@ form.addEventListener("submit", (event) => {
     throw new Error(`Dividend cannot be divided by zero.`);
     return;
   } else if (dividend === "" || divider === "") {
-    //Dividend and divider input fields are empty
+    //Dividend and/or divider input fields are empty
     result.innerText = `Division not performed. Both values are required in input fields. Try again`;
     return;
+  } else if (isNaN(dividend) || isNaN(divider)) {
+    document.body.innerHTML =
+      "Something critical went wrong. Please reload the page.";
+    console.log(new Error().stack);
   }
 });

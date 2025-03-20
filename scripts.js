@@ -13,8 +13,10 @@ form.addEventListener("submit", (event) => {
   if (dividend / divider === Infinity) {
     result.innerText = `Division not performed. Invalid number provided. Try again.`;
     throw new Error(`Dividend cannot be divided by zero.`);
+    return;
   } else if (dividend === "" || divider === "") {
     //Dividend and divider input fields are empty
     result.innerText = `Division not performed. Both values are required in input fields. Try again`;
+    return;
   }
 });

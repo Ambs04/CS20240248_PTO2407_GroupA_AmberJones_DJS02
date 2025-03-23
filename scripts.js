@@ -21,6 +21,6 @@ form.addEventListener("submit", (event) => {
   } else if (isNaN(dividend) || isNaN(divider)) {
     document.body.innerHTML =
       "Something critical went wrong. Please reload the page.";
-    console.log(new Error().stack);
+    console.log(new Error("Text cannot be used in the above fields!").stack);
   }
 });
